@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+tasks:
+  default:
+    sources: [__init__.py, manifest.json]
+    generates: [missing-kanji-finder.ankiaddon]
+    cmds:
+      - rm -f missing-kanji-finder.ankiaddon
+      - zip missing-kanji-finder.ankiaddon __init__.py manifest.json
